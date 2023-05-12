@@ -17,14 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', [ProductController::class, 'index'])->name('product.index');
+Route::get('/', [ProductController::class, 'index'])->name('products.index');
 
-Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
+Route::get('/product/create', [ProductController::class, 'create'])->name('products.create');
 
-Route::post('/product', [ProductController::class, 'store'])->name('product.store');
+Route::post('/product', [ProductController::class, 'store'])->name('products.store');
 
-Route::get('/product/{id}', [ProductController::class, 'show'])->where('id', '[0-9]{1,5}')->name('product.show');
+Route::get('/product/{id}', [ProductController::class, 'show'])->where('id', '[0-9]{1,5}')->name('products.show');
 
-Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->where('id', '[0-9]{1,5}')->name('product.edit');
+Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->where('id', '[0-9]{1,5}')->name('products.edit');
 
-Route::put('/product/{id}', [ProductController::class, 'update'])->where('id', '[0-9]{1,5}')->name('product.update');
+Route::put('/product/{id}', [ProductController::class, 'update'])->where('id', '[0-9]{1,5}')->name('products.update');
